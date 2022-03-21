@@ -15,6 +15,8 @@
 		30648E6327E7FD1D006E15FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30648E6127E7FD1D006E15FB /* LaunchScreen.storyboard */; };
 		30648E6E27E8001D006E15FB /* CurrentTempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30648E6C27E8001D006E15FB /* CurrentTempCell.swift */; };
 		30648E6F27E8001D006E15FB /* CurrentTempCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30648E6D27E8001D006E15FB /* CurrentTempCell.xib */; };
+		30648E7427E808D0006E15FB /* CurrentTempModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30648E7327E808D0006E15FB /* CurrentTempModel.swift */; };
+		30648E7727E80928006E15FB /* CurrentTempViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30648E7627E80928006E15FB /* CurrentTempViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		30648E6427E7FD1D006E15FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30648E6C27E8001D006E15FB /* CurrentTempCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTempCell.swift; sourceTree = "<group>"; };
 		30648E6D27E8001D006E15FB /* CurrentTempCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTempCell.xib; sourceTree = "<group>"; };
+		30648E7327E808D0006E15FB /* CurrentTempModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTempModel.swift; sourceTree = "<group>"; };
+		30648E7627E80928006E15FB /* CurrentTempViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTempViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		30648E5527E7FD1B006E15FB /* MyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				30648E7527E80913006E15FB /* ViewModel */,
+				30648E7027E80646006E15FB /* Model */,
 				30648E6B27E7FFD2006E15FB /* View */,
 				30648E6A27E7FFBE006E15FB /* Viewcontroller */,
 				30648E5627E7FD1B006E15FB /* AppDelegate.swift */,
@@ -87,6 +93,22 @@
 				30648E6D27E8001D006E15FB /* CurrentTempCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		30648E7027E80646006E15FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30648E7327E808D0006E15FB /* CurrentTempModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30648E7527E80913006E15FB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				30648E7627E80928006E15FB /* CurrentTempViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +186,8 @@
 				30648E5B27E7FD1B006E15FB /* WeatherViewController.swift in Sources */,
 				30648E6E27E8001D006E15FB /* CurrentTempCell.swift in Sources */,
 				30648E5727E7FD1B006E15FB /* AppDelegate.swift in Sources */,
+				30648E7427E808D0006E15FB /* CurrentTempModel.swift in Sources */,
+				30648E7727E80928006E15FB /* CurrentTempViewModel.swift in Sources */,
 				30648E5927E7FD1B006E15FB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
