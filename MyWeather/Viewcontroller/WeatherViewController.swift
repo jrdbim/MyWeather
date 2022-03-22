@@ -7,21 +7,50 @@
 
 import UIKit
 import Combine
+import CoreLocation
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var observer: AnyCancellable?
     let service = CurrentTempViewModel()
+    let locationManager = CLLocationManager()
     var currentTemp: CurrentTempModel?
+    var lat: String = ""
+    var lon: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        requestLocation()
         setTableView()
+    }
+    
+    private func requestLocation() {
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.lat = "\(locValue.latitude)"
+        self.lon = "\(locValue.longitude)"
         
-        observer = service.requestCurrentTemp()
+        requestCurrentTemp()
+    }
+    
+    private func requestCurrentTemp() {
+        observer = service.requestCurrentTemp(lat: self.lat, lon: self.lon)
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] currentTemp in
                 self?.currentTemp = currentTemp
@@ -44,9 +73,9 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 { // current weather
             return 1
         } else if section == 1 { // hour forecast
-            return 1
+            return 0
         } else if section == 2 { // day forecast
-            return 1
+            return 0
         } else {
             return 0
         }

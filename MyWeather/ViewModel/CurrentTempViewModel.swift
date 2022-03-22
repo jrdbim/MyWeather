@@ -10,8 +10,8 @@ import Combine
 
 class CurrentTempViewModel {
     
-    func requestCurrentTemp() -> AnyPublisher<CurrentTempModel, Never> {
-        guard let url = URL(string: "http://api.weatherapi.com/v1/current.json?key=bea34cbe5cf84dc2b6910026222103&q=New_York&aqi=no") else {
+    func requestCurrentTemp(lat: String, lon: String) -> AnyPublisher<CurrentTempModel, Never> {
+        guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=bea34cbe5cf84dc2b6910026222103&q=\(lat),\(lon)&days=1&aqi=no&alerts=no") else {
             return Just(CurrentTempModel()).eraseToAnyPublisher()
         }
         

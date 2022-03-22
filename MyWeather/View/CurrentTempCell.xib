@@ -65,8 +65,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="currentConditionLabel" destination="M4u-HQ-0IX" id="NDT-F6-Em6"/>
-                <outlet property="currentFeellikeLabel" destination="BGz-1o-Yw7" id="FfA-3n-X9D"/>
                 <outlet property="currentLocationLabel" destination="Q3d-ov-RB6" id="UBr-jj-rsj"/>
+                <outlet property="currentMinMaxLabel" destination="BGz-1o-Yw7" id="FfA-3n-X9D"/>
                 <outlet property="currentTempLabel" destination="Dtg-xO-dOG" id="LSO-d7-iwf"/>
             </connections>
             <point key="canvasLocation" x="176.81159420289856" y="153.68303571428569"/>

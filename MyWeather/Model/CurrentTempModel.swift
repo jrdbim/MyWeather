@@ -11,6 +11,7 @@ struct CurrentTempModel: Codable {
     
     var location: LocationModel?
     var current: CurrentModel?
+    var forecast: ForecastModel?
     
 }
 
@@ -48,5 +49,39 @@ struct CurrentConditionModel: Codable {
     var text: String?
     var icon: String?
     var code: Double?
+    
+}
+
+struct ForecastModel: Codable {
+    
+    var forecastday: [ForecastdayModel]?
+    
+}
+
+struct ForecastdayModel: Codable {
+    
+    var day: DayModel?
+    
+}
+
+struct DayModel: Codable {
+    
+    private var maxtemp_c: Double?
+    private var maxtemp_f: Double?
+    private var mintemp_c: Double?
+    private var mintemp_f: Double?
+    
+    var string_maxtemp_c: String {
+        return "\(String(format: "%.0f", maxtemp_c ?? 0))°"
+    }
+    var string_maxtemp_f: String {
+        return "\(String(format: "%.0f", maxtemp_f ?? 0))°"
+    }
+    var string_mintemp_c: String {
+        return "\(String(format: "%.0f", mintemp_c ?? 0))°"
+    }
+    var string_mintemp_f: String {
+        return "\(String(format: "%.0f", mintemp_f ?? 0))°"
+    }
     
 }
