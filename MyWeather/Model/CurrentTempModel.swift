@@ -61,6 +61,7 @@ struct ForecastModel: Codable {
 struct ForecastdayModel: Codable {
     
     var day: DayModel?
+    var hour: [HourModel]?
     
 }
 
@@ -83,5 +84,31 @@ struct DayModel: Codable {
     var string_mintemp_f: String {
         return "\(String(format: "%.0f", mintemp_f ?? 0))°"
     }
+    
+}
+
+struct HourModel: Codable {
+    
+    private var time: String?
+    var condition: HourCoditionModel?
+    private var temp_c: Double?
+    
+    var string_temp_c: String {
+        return " \(String(format: "%.0f", temp_c ?? 0))°"
+    }
+    
+    var hour: String {
+        if let hourComponent = time?.components(separatedBy: " ") {
+            return hourComponent[1].components(separatedBy: ":")[0]
+        } else {
+            return ""
+        }
+    }
+    
+}
+
+struct HourCoditionModel: Codable {
+    
+    var icon: String = ""
     
 }

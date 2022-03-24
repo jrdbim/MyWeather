@@ -23,6 +23,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.systemGray6
         requestLocation()
         setTableView()
     }
@@ -45,7 +46,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         self.lat = "\(locValue.latitude)"
         self.lon = "\(locValue.longitude)"
-        
+        locationManager.stopUpdatingLocation()
         requestCurrentTemp()
     }
     
@@ -66,14 +67,16 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.backgroundColor = .clear
         tableView.register(UINib(nibName: CurrentTempCell.identifier, bundle: nil), forCellReuseIdentifier: CurrentTempCell.identifier)
+        tableView.register(UINib(nibName: ForecastHourCell.identifier, bundle: nil), forCellReuseIdentifier: ForecastHourCell.identifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 { // current weather
             return 1
         } else if section == 1 { // hour forecast
-            return 0
+            return 1
         } else if section == 2 { // day forecast
             return 0
         } else {
@@ -91,8 +94,8 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(data: self.currentTemp)
             return cell
         } else if indexPath.section == 1 { // hour forecast
-            let cell = tableView.dequeueReusableCell(withIdentifier: CurrentTempCell.identifier, for: indexPath) as! CurrentTempCell
-            cell.configure(data: self.currentTemp)
+            let cell = tableView.dequeueReusableCell(withIdentifier: ForecastHourCell.identifier, for: indexPath) as! ForecastHourCell
+            cell.configure(forecastHour: self.currentTemp?.forecast?.forecastday?.first?.hour)
             return cell
         } else if indexPath.section == 2 { // day forecast
             return UITableViewCell()

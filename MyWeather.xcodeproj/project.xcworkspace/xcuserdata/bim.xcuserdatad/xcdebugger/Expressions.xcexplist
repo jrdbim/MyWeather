@@ -3,10 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "CurrentTempViewModel.requestCurrentTemp(lat:lon:):CurrentTempViewModel.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in WeatherViewController.requestCurrentTemp():WeatherViewController.swift">
+         contextName = "WeatherViewController.tableView(_:cellForRowAt:):WeatherViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in CurrentTempViewModel.requestCurrentTemp(lat:lon:):CurrentTempViewModel.swift">
@@ -15,6 +12,23 @@
                value = "String(data: $0.data, encoding: .utf8)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ForecastHourCell.collectionView(_:cellForItemAt:):ForecastHourCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HourCollectionViewCell.configure(forecastHour:):HourCollectionViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "forecastHour.condition?.icon">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in WeatherViewController.requestCurrentTemp():WeatherViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CurrentTempViewModel.requestCurrentTemp(lat:lon:):CurrentTempViewModel.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
