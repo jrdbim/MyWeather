@@ -60,6 +60,7 @@ struct ForecastModel: Codable {
 
 struct ForecastdayModel: Codable {
     
+    var date: String = ""
     var day: DayModel?
     var hour: [HourModel]?
     
@@ -67,19 +68,20 @@ struct ForecastdayModel: Codable {
 
 struct DayModel: Codable {
     
-    private var maxtemp_c: Double?
+    var maxtemp_c: Double = 0
     private var maxtemp_f: Double?
-    private var mintemp_c: Double?
+    var mintemp_c: Double = 0
     private var mintemp_f: Double?
+    var condition: HourCoditionModel?
     
     var string_maxtemp_c: String {
-        return "\(String(format: "%.0f", maxtemp_c ?? 0))°"
+        return "\(String(format: "%.0f", maxtemp_c))°"
     }
     var string_maxtemp_f: String {
         return "\(String(format: "%.0f", maxtemp_f ?? 0))°"
     }
     var string_mintemp_c: String {
-        return "\(String(format: "%.0f", mintemp_c ?? 0))°"
+        return "\(String(format: "%.0f", mintemp_c))°"
     }
     var string_mintemp_f: String {
         return "\(String(format: "%.0f", mintemp_f ?? 0))°"

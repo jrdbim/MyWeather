@@ -70,6 +70,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.backgroundColor = .clear
         tableView.register(UINib(nibName: CurrentTempCell.identifier, bundle: nil), forCellReuseIdentifier: CurrentTempCell.identifier)
         tableView.register(UINib(nibName: ForecastHourCell.identifier, bundle: nil), forCellReuseIdentifier: ForecastHourCell.identifier)
+        tableView.register(UINib(nibName: ForecastDayCell.identifier, bundle: nil), forCellReuseIdentifier: ForecastDayCell.identifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,7 +79,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         } else if section == 1 { // hour forecast
             return 1
         } else if section == 2 { // day forecast
-            return 0
+            return 1
         } else {
             return 0
         }
@@ -98,7 +99,10 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(forecastHour: self.currentTemp?.forecast?.forecastday?.first?.hour)
             return cell
         } else if indexPath.section == 2 { // day forecast
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: ForecastDayCell.identifier, for: indexPath) as! ForecastDayCell
+            guard let currentTemp = self.currentTemp, let forcast = currentTemp.forecast else { return UITableViewCell() }
+            cell.configure(forecastModel: forcast.forecastday)
+            return cell
         } else {
             return UITableViewCell()
         }
