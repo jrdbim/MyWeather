@@ -3,10 +3,64 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in WeatherViewController.requestCurrentTemp():WeatherViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GaugeView.setGauge(gaugeWidth:maxGaugeTemp:lowGaugeTemp:lowTargetTemp:maxTargetTemp:):GaugeView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "targetView.frame.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ForecastDayView.configure(forecastdayModel:isLast:):ForecastDayView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dayCondition.icon">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CurrentTempViewModel.requestCurrentTemp(lat:lon:):CurrentTempViewModel.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in WeatherViewController.requestCurrentTemp():WeatherViewController.swift">
+         contextName = "GaugeView.commonInit():GaugeView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gaugeTempView.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ForecastHourCell.collectionView(_:cellForItemAt:):ForecastHourCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ForecastDayCell.configure(forecastModel:):ForecastDayCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "forecastModel?.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HourCollectionViewCell.configure(forecastHour:):HourCollectionViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "forecastHour.condition?.icon">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ForecastDayView.configure(forecastdayModel:isFirst:isLast:maxGaugeTemp:lowGuageTemp:):ForecastDayView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gaugeView.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "day.string_mintemp_c">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in CurrentTempViewModel.requestCurrentTemp(lat:lon:):CurrentTempViewModel.swift">
@@ -15,6 +69,28 @@
                value = "String(data: $0.data, encoding: .utf8)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GaugeView.setGauge():GaugeView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gaugeTempView.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ForecastDayView.configure(forecastdayModel:isFirst:isLast:):ForecastDayView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Int(gaugeView.frame.size.width)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WeatherViewController.tableView(_:cellForRowAt:):WeatherViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ForecastDayView.loadViewFromNib():ForecastDayView.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
